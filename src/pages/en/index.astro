@@ -180,6 +180,44 @@ const ADVENTURES = [
     </div>
   </section>
 
+  <!-- ─── FAUNA ─── -->
+  <section class="fauna section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Wildlife</p>
+        <h2 class="section-title">Nature as your<br />travel companion.</h2>
+        <p class="section-sub">Just steps from the cabins, Monteverde's cloud forest gifts you encounters you'll never forget.</p>
+      </div>
+      <div class="fauna-grid">
+        <div class="fauna-item fauna-item--tall"><img src="/images/fauna-1.jpg" alt="Wildlife Monteverde Costa Rica" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-2.jpg" alt="Wildlife Costa Rica cloud forest" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-3.jpg" alt="Cloud forest animal" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-4.jpg" alt="Fauna Monteverde" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-5.jpg" alt="Birds Monteverde" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BREAKFAST ─── -->
+  <section class="breakfast section">
+    <div class="container">
+      <div class="breakfast-inner">
+        <div class="breakfast-text">
+          <p class="section-label">Breakfast</p>
+          <h2 class="section-title">Start your day<br />with the taste of Costa Rica.</h2>
+          <p class="breakfast-body">Every morning, a fresh homemade breakfast waiting for you. From the classic gallo pinto to tortillas with ranchero eggs — everything prepared with care to fuel your forest adventure.</p>
+          <p class="breakfast-body">Breakfast is included in your stay. No rush, no noise. Just birdsong and a cup of Costa Rican coffee.</p>
+        </div>
+        <div class="breakfast-grid">
+          <div class="bitem bitem--wide"><img src="/images/breakfast-1.jpg" alt="Fresh fruit bowl Costa Rica" loading="lazy" /></div>
+          <div class="bitem"><img src="/images/breakfast-2.jpg" alt="Omelette breakfast Miztli Lodge" loading="lazy" /></div>
+          <div class="bitem"><img src="/images/breakfast-3.jpg" alt="Ranchero eggs Costa Rica" loading="lazy" /></div>
+          <div class="bitem bitem--wide"><img src="/images/breakfast-4.jpg" alt="Typical tico breakfast gallo pinto" loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="location section" id="location">
     <div class="container">
       <div class="location-inner">
@@ -340,6 +378,22 @@ const ADVENTURES = [
   .gitem--tall { grid-row: span 2; }
   .gitem--wide { grid-column: span 2; }
   @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4,220px); } .gitem--tall { grid-row: span 1; } .gitem--wide { grid-column: span 1; } }
+  .fauna { background: var(--mist); }
+  .fauna-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 8px; }
+  .fauna-item { overflow: hidden; border-radius: 10px; background: var(--sage); }
+  .fauna-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .fauna-item:hover img { transform: scale(1.05); }
+  .fauna-item--tall { grid-row: span 2; }
+  @media (max-width: 700px) { .fauna-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 200px); } .fauna-item--tall { grid-row: span 1; } }
+  .breakfast { background: var(--cream); }
+  .breakfast-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+  .breakfast-body { font-size: 15px; line-height: 1.75; color: #556040; margin-bottom: 16px; }
+  .breakfast-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; gap: 8px; }
+  .bitem { overflow: hidden; border-radius: 10px; background: var(--sage); }
+  .bitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .bitem:hover img { transform: scale(1.04); }
+  .bitem--wide { grid-column: span 2; }
+  @media (max-width: 860px) { .breakfast-inner { grid-template-columns: 1fr; gap: 40px; } }
   .location { background: var(--warm-white); }
   .location-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
   .location-addr { font-size: 14px; color: #556650; line-height: 1.7; margin: 20px 0 24px; }
