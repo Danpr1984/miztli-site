@@ -114,35 +114,35 @@ const ADVENTURES = [
       <div class="cabins-grid">
         <div class="cabin-card cabin-card--featured">
           <div class="cabin-img">
-            <img src="/images/cabin-1.jpg" alt="Cabina Miztli Lodge Monteverde" loading="lazy" />
-            <span class="cabin-badge">Más popular</span>
+            <img src="/images/room-studio.jpg" alt="Studio con Sofá Cama Miztli Lodge" loading="lazy" />
+            <span class="cabin-badge">Ideal para parejas</span>
           </div>
           <div class="cabin-content">
-            <h3>Cabina Doble</h3>
-            <p>Cama matrimonial, baño privado, terraza con vista al bosque. Perfecta para parejas.</p>
-            <div class="cabin-meta"><span>👤 2 personas</span><span>🌿 Vista al bosque</span></div>
+            <h3>Studio con Sofá Cama</h3>
+            <p>Cuarto tipo estudio con sofá cama, baño privado y todo lo que necesitás para una estadía cómoda en Monteverde.</p>
+            <div class="cabin-meta"><span>👤 2 personas</span><span>🌿 Monteverde</span></div>
             <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-primary btn-sm">Ver disponibilidad</a>
           </div>
         </div>
         <div class="cabin-card">
           <div class="cabin-img">
-            <img src="/images/cabin-2.jpg" alt="Cabina familiar Miztli Lodge" loading="lazy" />
+            <img src="/images/room-triple.jpg" alt="Triple Standard Miztli Lodge" loading="lazy" />
           </div>
           <div class="cabin-content">
-            <h3>Cabina Familiar</h3>
-            <p>Espacio para toda la familia con múltiples camas y todas las comodidades.</p>
-            <div class="cabin-meta"><span>👨‍👩‍👧 4 personas</span><span>🌿 Vista al bosque</span></div>
+            <h3>Triple Standard</h3>
+            <p>Tres camas, baño privado y el bosque nublado como vecino. Perfecto para amigos o familia.</p>
+            <div class="cabin-meta"><span>👥 3 personas</span><span>🌿 Monteverde</span></div>
             <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ver disponibilidad</a>
           </div>
         </div>
         <div class="cabin-card">
           <div class="cabin-img">
-            <img src="/images/cabin-3.jpg" alt="Cabina estándar Miztli Lodge" loading="lazy" />
+            <img src="/images/room-cuadruple.jpg" alt="Cuádruple Standard Miztli Lodge" loading="lazy" />
           </div>
           <div class="cabin-content">
-            <h3>Cabina Estándar</h3>
-            <p>Cómoda y acogedora. Todo lo que necesitas para disfrutar Monteverde al máximo.</p>
-            <div class="cabin-meta"><span>👤 2 personas</span><span>☁️ Ambiente nublado</span></div>
+            <h3>Cuádruple Standard</h3>
+            <p>Cuatro camas, espacio amplio y baño privado. La opción ideal para grupos y familias.</p>
+            <div class="cabin-meta"><span>👨‍👩‍👧 4 personas</span><span>🌿 Monteverde</span></div>
             <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ver disponibilidad</a>
           </div>
         </div>
@@ -377,17 +377,16 @@ const ADVENTURES = [
 
   /* CABINS */
   .cabins { background: var(--mist); }
-  .cabins-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-  .cabin-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 20px rgba(30,61,26,0.07); transition: transform 0.3s, box-shadow 0.3s; }
+  .cabins-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; align-items: start; }
+  .cabin-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 20px rgba(30,61,26,0.07); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
   .cabin-card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(30,61,26,0.13); }
-  .cabin-img { position: relative; height: 220px; overflow: hidden; background: var(--sage); }
-  .cabin-card--featured .cabin-img { height: 280px; }
+  .cabin-img { position: relative; height: 240px; overflow: hidden; background: var(--sage); flex-shrink: 0; }
   .cabin-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
   .cabin-card:hover .cabin-img img { transform: scale(1.05); }
   .cabin-badge { position: absolute; top: 14px; left: 14px; background: var(--amber); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; }
-  .cabin-content { padding: 22px 24px 26px; }
+  .cabin-content { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
   .cabin-content h3 { font-size: 20px; color: var(--forest); margin-bottom: 8px; }
-  .cabin-content p { font-size: 14px; color: #556650; line-height: 1.6; margin-bottom: 14px; }
+  .cabin-content p { font-size: 14px; color: #556650; line-height: 1.6; margin-bottom: 14px; flex: 1; }
   .cabin-meta { display: flex; gap: 16px; font-size: 13px; color: var(--sage); margin-bottom: 18px; }
   .cabins-cta { text-align: center; }
   @media (max-width: 900px) { .cabins-grid { grid-template-columns: 1fr 1fr; } }
