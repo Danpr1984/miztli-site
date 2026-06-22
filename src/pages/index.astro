@@ -181,12 +181,12 @@ const ADVENTURES = [
   <!-- ─── GALLERY ─── -->
   <section class="gallery" id="galeria">
     <div class="gallery-grid">
-      <div class="gitem gitem--tall"><img src="/images/gallery-1.jpg" alt="Bosque nublado Monteverde" loading="lazy" /></div>
-      <div class="gitem"><img src="/images/gallery-2.jpg" alt="Cabina Miztli Lodge" loading="lazy" /></div>
-      <div class="gitem"><img src="/images/gallery-3.jpg" alt="Aventura en Monteverde" loading="lazy" /></div>
-      <div class="gitem gitem--wide"><img src="/images/gallery-4.jpg" alt="Puentes colgantes Monteverde" loading="lazy" /></div>
-      <div class="gitem"><img src="/images/gallery-5.jpg" alt="Vida silvestre Costa Rica" loading="lazy" /></div>
-      <div class="gitem"><img src="/images/gallery-last.jpg" alt="Miztli Lodge Monteverde" loading="lazy" /></div>
+      <div class="g1"><img src="/images/gallery-1.jpg" alt="Bosque nublado Monteverde" loading="lazy" /></div>
+      <div class="g2"><img src="/images/gallery-2.jpg" alt="Vista Monteverde" loading="lazy" /></div>
+      <div class="g3"><img src="/images/gallery-3.jpg" alt="Cuartos Miztli Lodge" loading="lazy" /></div>
+      <div class="g4"><img src="/images/gallery-5.jpg" alt="Mono capuchino Costa Rica" loading="lazy" /></div>
+      <div class="g5"><img src="/images/gallery-4.jpg" alt="Flores Monteverde" loading="lazy" /></div>
+      <div class="g6"><img src="/images/gallery-last.jpg" alt="Miztli Lodge entrada" loading="lazy" /></div>
     </div>
   </section>
 
@@ -415,13 +415,31 @@ const ADVENTURES = [
 
   /* GALLERY */
   .gallery { width: 100%; }
-  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1.6fr; grid-template-rows: 280px 280px; gap: 4px; }
-  .gitem { overflow: hidden; background: var(--sage); }
-  .gitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
-  .gitem:hover img { transform: scale(1.05); }
-  .gitem--tall { grid-row: span 2; }
-  .gitem--wide { grid-column: span 2; }
-  @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4,220px); } .gitem--tall { grid-row: span 1; } .gitem--wide { grid-column: span 1; } }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px;
+    gap: 4px;
+  }
+  .gallery-grid > div { overflow: hidden; background: var(--sage); }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .gallery-grid > div:hover img { transform: scale(1.05); }
+  /* Explicit placement — zero gaps */
+  .g1 { grid-column: 1; grid-row: 1 / 3; }
+  .g2 { grid-column: 2; grid-row: 1; }
+  .g3 { grid-column: 3; grid-row: 1; }
+  .g4 { grid-column: 2; grid-row: 2; }
+  .g5 { grid-column: 2 / 4; grid-row: 3; }
+  .g6 { grid-column: 3; grid-row: 2; }
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 200px); }
+    .g1 { grid-column: 1; grid-row: 1 / 3; }
+    .g2 { grid-column: 2; grid-row: 1; }
+    .g3 { grid-column: 2; grid-row: 2; }
+    .g4 { grid-column: 1; grid-row: 3; }
+    .g5 { grid-column: 2; grid-row: 3; }
+    .g6 { grid-column: 1 / 3; grid-row: 4; }
+  }
 
   /* LOCATION */
   .location { background: var(--warm-white); }
