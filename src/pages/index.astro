@@ -187,6 +187,44 @@ const ADVENTURES = [
     </div>
   </section>
 
+  <!-- ─── FAUNA ─── -->
+  <section class="fauna section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Vida silvestre</p>
+        <h2 class="section-title">La naturaleza como<br />compañera de viaje.</h2>
+        <p class="section-sub">A pasos de las cabinas, el bosque nublado de Monteverde te regala encuentros que no olvidarás.</p>
+      </div>
+      <div class="fauna-grid">
+        <div class="fauna-item fauna-item--tall"><img src="/images/fauna-1.jpg" alt="Fauna silvestre Monteverde" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-2.jpg" alt="Vida silvestre Costa Rica" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-3.jpg" alt="Animal bosque nublado" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-4.jpg" alt="Fauna Monteverde Costa Rica" loading="lazy" /></div>
+        <div class="fauna-item"><img src="/images/fauna-5.jpg" alt="Aves Monteverde" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BREAKFAST ─── -->
+  <section class="breakfast section">
+    <div class="container">
+      <div class="breakfast-inner">
+        <div class="breakfast-text">
+          <p class="section-label">Desayunos</p>
+          <h2 class="section-title">Empieza el día<br />con sabor a Costa Rica.</h2>
+          <p class="breakfast-body">Cada mañana, desayuno fresco y casero esperándote. Desde el gallo pinto típico tico hasta tortillas con huevos rancheros — todo preparado con cariño para darte la energía que el bosque merece.</p>
+          <p class="breakfast-body">El desayuno está incluido en tu estadía. Sin prisas, sin ruidos. Solo el canto de los pájaros y una taza de café costarricense.</p>
+        </div>
+        <div class="breakfast-grid">
+          <div class="bitem bitem--wide"><img src="/images/breakfast-1.jpg" alt="Bowl de frutas frescas Costa Rica" loading="lazy" /></div>
+          <div class="bitem"><img src="/images/breakfast-2.jpg" alt="Omelette desayuno Miztli Lodge" loading="lazy" /></div>
+          <div class="bitem"><img src="/images/breakfast-3.jpg" alt="Huevos rancheros Costa Rica" loading="lazy" /></div>
+          <div class="bitem bitem--wide"><img src="/images/breakfast-4.jpg" alt="Desayuno típico tico gallo pinto" loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── LOCATION ─── -->
   <section class="location section" id="ubicacion">
     <div class="container">
@@ -400,6 +438,26 @@ const ADVENTURES = [
   .footer-bottom { max-width: 1140px; margin: 0 auto; padding: 20px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.3); }
   @media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 540px) { .footer-inner { grid-template-columns: 1fr; } }
+
+  /* FAUNA */
+  .fauna { background: var(--mist); }
+  .fauna-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 8px; }
+  .fauna-item { overflow: hidden; border-radius: 10px; background: var(--sage); }
+  .fauna-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .fauna-item:hover img { transform: scale(1.05); }
+  .fauna-item--tall { grid-row: span 2; }
+  @media (max-width: 700px) { .fauna-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 200px); } .fauna-item--tall { grid-row: span 1; } }
+
+  /* BREAKFAST */
+  .breakfast { background: var(--cream); }
+  .breakfast-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+  .breakfast-body { font-size: 15px; line-height: 1.75; color: #556040; margin-bottom: 16px; }
+  .breakfast-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; gap: 8px; }
+  .bitem { overflow: hidden; border-radius: 10px; background: var(--sage); }
+  .bitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .bitem:hover img { transform: scale(1.04); }
+  .bitem--wide { grid-column: span 2; }
+  @media (max-width: 860px) { .breakfast-inner { grid-template-columns: 1fr; gap: 40px; } }
 
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 2px; }
