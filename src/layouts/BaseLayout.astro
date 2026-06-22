@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+  ogImage?: string;
+}
+const { title, description, lang = 'es', ogImage = '/images/hero.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, 'https://www.miztlilodge.com');
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`https://www.miztlilodge.com${ogImage}`} />
+  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="es" href={`https://www.miztlilodge.com${Astro.url.pathname.replace('/en','') || '/'}`} />
+  <link rel="alternate" hreflang="en" href={`https://www.miztlilodge.com/en${Astro.url.pathname}`} />
+  <link rel="icon" type="image/png" href="/images/logo-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Miztli Lodge & Adventures",
+    "description": description,
+    "url": "https://www.miztlilodge.com",
+    "telephone": "+50622367642",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Subida a la Escuela Creativa, frente a la entrada del Sapo Dorado",
+      "addressLocality": "Cerro Plano, Monteverde",
+      "addressRegion": "Puntarenas",
+      "addressCountry": "CR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 10.3079,
+      "longitude": -84.8148
+    }
+  })}</script>
+</head>
+<body>
+  <slot />
+</body>
+</html>

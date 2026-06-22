@@ -1,0 +1,406 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const PHONE     = "+50622367642";
+const PHONE_2   = "+50660740237";
+const WA_LINK   = `https://wa.me/${PHONE.replace('+','')}?text=${encodeURIComponent("Hola, me gustaría consultar disponibilidad en Miztli Lodge.")}`;
+const BOOKING   = "https://www.miztlilodge.com/en/reservation";
+const INSTAGRAM = "https://instagram.com/miztlilodge";
+const EMAIL     = "miztlilodge@gmail.com";
+
+const ADVENTURES = [
+  { icon: "🌿", title: "Puentes Colgantes", desc: "Camina sobre el dosel del bosque nublado con vistas panorámicas a la selva de Monteverde." },
+  { icon: "⚡", title: "Canopy & Zipline", desc: "Adrenalina pura sobrevolando el bosque con las mejores operadoras de la zona." },
+  { icon: "🦜", title: "Observación de Aves", desc: "Monteverde es paraíso para pajarólogos. Guías expertos locales te ayudan a encontrar el quetzal." },
+  { icon: "🥾", title: "Senderismo Guiado", desc: "Rutas secretas del bosque nublado con guías que conocen cada árbol, rana y orquídea." },
+  { icon: "🦥", title: "Vida Silvestre", desc: "Perezosos, monos, coatíes y cientos de especies a pasos de las cabinas." },
+  { icon: "☁️", title: "Bosque Nublado", desc: "Un ecosistema único en el mundo. Niebla, epífitas y silencio a 1.400 metros sobre el mar." },
+];
+---
+
+<BaseLayout
+  title="Miztli Lodge & Adventures — Monteverde, Costa Rica"
+  description="Lodge & cabinas en el bosque nublado de Monteverde. Aventura, naturaleza y hospitalidad auténtica en Costa Rica."
+  lang="es"
+>
+
+  <!-- ─── NAV ─── -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo-dark.png" alt="Miztli Lodge & Adventures" height="44" />
+      </a>
+      <nav class="nav-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#cabinas">Cabinas</a>
+        <a href="#aventuras">Aventuras</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="/en" class="lang-toggle">EN</a>
+      </nav>
+      <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-primary nav-cta">Reservar</a>
+      <button class="hamburger" aria-label="Menú" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="#nosotros" onclick="this.closest('.mobile-menu').classList.remove('open')">Nosotros</a>
+      <a href="#cabinas" onclick="this.closest('.mobile-menu').classList.remove('open')">Cabinas</a>
+      <a href="#aventuras" onclick="this.closest('.mobile-menu').classList.remove('open')">Aventuras</a>
+      <a href="#galeria" onclick="this.closest('.mobile-menu').classList.remove('open')">Galería</a>
+      <a href="#ubicacion" onclick="this.closest('.mobile-menu').classList.remove('open')">Ubicación</a>
+      <a href="/en">EN</a>
+      <a href={BOOKING} class="btn btn-primary" target="_blank" rel="noopener">Reservar ahora</a>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/hero.jpg" alt="Bosque nublado de Monteverde — Miztli Lodge" fetchpriority="high" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cerro Plano · Monteverde · Costa Rica</p>
+      <h1 class="hero-title">Despierta en el<br />Bosque Nublado.</h1>
+      <p class="hero-sub">Cabinas rodeadas de naturaleza, aventura a tu puerta<br />y dos anfitriones que aman compartir Monteverde con el mundo.</p>
+      <div class="hero-actions">
+        <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-primary">Reservar ahora</a>
+        <a href="#nosotros" class="btn btn-ghost">Conocer Miztli</a>
+      </div>
+    </div>
+    <a href="#nosotros" class="scroll-hint" aria-label="Scroll">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ─── STATS STRIP ─── -->
+  <section class="strip">
+    <div class="strip-inner">
+      <div class="strip-item"><span class="strip-num">8</span><span class="strip-label">Cabinas privadas</span></div>
+      <div class="strip-item"><span class="strip-num">1.400m</span><span class="strip-label">Sobre el nivel del mar</span></div>
+      <div class="strip-item"><span class="strip-num">6+</span><span class="strip-label">Aventuras disponibles</span></div>
+      <div class="strip-item"><span class="strip-num">Cerro Plano</span><span class="strip-label">Monteverde, Costa Rica</span></div>
+    </div>
+  </section>
+
+  <!-- ─── STORY ─── -->
+  <section class="story section" id="nosotros">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-text">
+          <p class="section-label">Nuestra historia</p>
+          <h2 class="section-title">Dos enamorados<br />del bosque nublado.</h2>
+          <p class="story-body">Miztli nació de algo muy simple: el amor por Monteverde. Somos dos jóvenes que un día llegamos a este rincón de Costa Rica y no quisimos irnos más.</p>
+          <p class="story-body">El bosque nublado, las aves, la niebla mañanera, el silencio... decidimos convertir ese amor en un lugar donde más personas pudieran vivir lo mismo.</p>
+          <p class="story-body">Cada huésped es una oportunidad de compartir el lugar que más amamos. Somos tus anfitriones, tus guías y, si quieres, tus amigos en Monteverde.</p>
+          <a href={WA_LINK} target="_blank" rel="noopener" class="btn btn-outline">Escríbenos directamente</a>
+        </div>
+        <div class="story-image">
+          <img src="/images/story.jpg" alt="Anfitriones de Miztli Lodge en Monteverde" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CABINS ─── -->
+  <section class="cabins section" id="cabinas">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Alojamiento</p>
+        <h2 class="section-title">8 cabinas en el corazón<br />del bosque.</h2>
+        <p class="section-sub">Cada cabina es privada, cómoda y rodeada de naturaleza. Despierta con el canto de los pájaros.</p>
+      </div>
+      <div class="cabins-grid">
+        <div class="cabin-card cabin-card--featured">
+          <div class="cabin-img">
+            <img src="/images/cabin-1.jpg" alt="Cabina Miztli Lodge Monteverde" loading="lazy" />
+            <span class="cabin-badge">Más popular</span>
+          </div>
+          <div class="cabin-content">
+            <h3>Cabina Doble</h3>
+            <p>Cama matrimonial, baño privado, terraza con vista al bosque. Perfecta para parejas.</p>
+            <div class="cabin-meta"><span>👤 2 personas</span><span>🌿 Vista al bosque</span></div>
+            <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-primary btn-sm">Ver disponibilidad</a>
+          </div>
+        </div>
+        <div class="cabin-card">
+          <div class="cabin-img">
+            <img src="/images/cabin-2.jpg" alt="Cabina familiar Miztli Lodge" loading="lazy" />
+          </div>
+          <div class="cabin-content">
+            <h3>Cabina Familiar</h3>
+            <p>Espacio para toda la familia con múltiples camas y todas las comodidades.</p>
+            <div class="cabin-meta"><span>👨‍👩‍👧 4 personas</span><span>🌿 Vista al bosque</span></div>
+            <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ver disponibilidad</a>
+          </div>
+        </div>
+        <div class="cabin-card">
+          <div class="cabin-img">
+            <img src="/images/cabin-3.jpg" alt="Cabina estándar Miztli Lodge" loading="lazy" />
+          </div>
+          <div class="cabin-content">
+            <h3>Cabina Estándar</h3>
+            <p>Cómoda y acogedora. Todo lo que necesitas para disfrutar Monteverde al máximo.</p>
+            <div class="cabin-meta"><span>👤 2 personas</span><span>☁️ Ambiente nublado</span></div>
+            <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ver disponibilidad</a>
+          </div>
+        </div>
+      </div>
+      <div class="cabins-cta">
+        <a href={BOOKING} target="_blank" rel="noopener" class="btn btn-primary">Ver todas las cabinas y precios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ADVENTURES ─── -->
+  <section class="adventures section" id="aventuras">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Aventura</p>
+        <h2 class="section-title">El bosque te espera.</h2>
+        <p class="section-sub">Monteverde es uno de los ecosistemas más ricos del planeta. Te ayudamos a vivirlo de verdad.</p>
+      </div>
+      <div class="adventures-grid">
+        {ADVENTURES.map(a => (
+          <div class="adventure-card">
+            <span class="adventure-icon">{a.icon}</span>
+            <h3>{a.title}</h3>
+            <p>{a.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="adventures-cta">
+        <a href={WA_LINK} target="_blank" rel="noopener" class="btn btn-primary-light">Planear mi aventura</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ─── -->
+  <section class="gallery" id="galeria">
+    <div class="gallery-grid">
+      <div class="gitem gitem--tall"><img src="/images/gallery-1.jpg" alt="Bosque nublado Monteverde" loading="lazy" /></div>
+      <div class="gitem"><img src="/images/gallery-2.jpg" alt="Cabina Miztli Lodge" loading="lazy" /></div>
+      <div class="gitem"><img src="/images/gallery-3.jpg" alt="Aventura en Monteverde" loading="lazy" /></div>
+      <div class="gitem gitem--wide"><img src="/images/gallery-4.jpg" alt="Puentes colgantes Monteverde" loading="lazy" /></div>
+      <div class="gitem"><img src="/images/gallery-5.jpg" alt="Vida silvestre Costa Rica" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- ─── LOCATION ─── -->
+  <section class="location section" id="ubicacion">
+    <div class="container">
+      <div class="location-inner">
+        <div class="location-text">
+          <p class="section-label">Cómo llegar</p>
+          <h2 class="section-title">En el corazón<br />de Monteverde.</h2>
+          <p class="location-addr">📍 Subida a la Escuela Creativa, frente a la entrada del Sapo Dorado, Cerro Plano, Monteverde, Puntarenas, Costa Rica.</p>
+          <div class="location-contacts">
+            <a href={`tel:${PHONE}`} class="contact-item">📞 +506 2236 7642</a>
+            <a href={`tel:${PHONE_2}`} class="contact-item">📞 +506 6074 0237</a>
+            <a href={`mailto:${EMAIL}`} class="contact-item">✉️ {EMAIL}</a>
+            <a href={INSTAGRAM} target="_blank" rel="noopener" class="contact-item">📸 @miztlilodge</a>
+          </div>
+          <a href={WA_LINK} target="_blank" rel="noopener" class="btn btn-primary">Escribir por WhatsApp</a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930!2d-84.8148!3d10.3079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0a1b1b1b1b1b1%3A0x1!2sMiztli+Lodge+%26+Adventures!5e0!3m2!1ses!2scr!4v1"
+            width="100%" height="400" style="border:0; border-radius:12px;" allowfullscreen loading="lazy"
+            title="Miztli Lodge ubicación en Monteverde Costa Rica">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-dark.png" alt="Miztli Lodge & Adventures" height="48" style="filter:brightness(0) invert(1); margin-bottom:16px;" />
+        <p>Lodge & cabinas en el bosque nublado<br />de Monteverde, Costa Rica.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#cabinas">Cabinas</a>
+        <a href="#aventuras">Aventuras</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href={`tel:${PHONE}`}>+506 2236 7642</a>
+        <a href={`tel:${PHONE_2}`}>+506 6074 0237</a>
+        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        <a href={INSTAGRAM} target="_blank" rel="noopener">@miztlilodge</a>
+      </div>
+      <div class="footer-col">
+        <h4>Reservas</h4>
+        <a href={BOOKING} target="_blank" rel="noopener">Reservar online</a>
+        <a href={WA_LINK} target="_blank" rel="noopener">WhatsApp</a>
+        <a href="/en">English version</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Miztli Lodge & Adventures · Cerro Plano, Monteverde, Costa Rica</p>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:       #1E3D1A;
+    --forest-mid:   #2D5A27;
+    --sage:         #7A8C50;
+    --sage-light:   #A8BC7A;
+    --cream:        #F5F0E6;
+    --warm-white:   #FDFAF5;
+    --mist:         #EDF2E4;
+    --earth:        #7A6245;
+    --amber:        #C17B3E;
+    --dark:         #0F1A0D;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--warm-white); color: var(--dark); }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; display: block; }
+  .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.15; color: var(--forest); margin-bottom: 16px; }
+  .section-sub { font-size: 16px; color: #556650; max-width: 520px; line-height: 1.65; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-header .section-sub { margin: 0 auto; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 96px 0; }
+
+  /* BUTTONS */
+  .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 100px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; text-decoration: none; transition: all 0.2s ease; cursor: pointer; border: none; white-space: nowrap; }
+  .btn-primary { background: var(--forest); color: #fff; padding: 14px 28px; }
+  .btn-primary:hover { background: var(--forest-mid); transform: translateY(-1px); }
+  .btn-primary-light { background: var(--sage); color: #fff; padding: 14px 28px; }
+  .btn-primary-light:hover { background: var(--sage-light); color: var(--dark); }
+  .btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); padding: 13px 28px; }
+  .btn-outline:hover { background: var(--forest); color: #fff; }
+  .btn-ghost { background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.45); padding: 13px 28px; backdrop-filter: blur(4px); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.22); }
+  .btn-sm { padding: 10px 20px; font-size: 13px; }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(14, 27, 11, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; gap: 32px; }
+  .nav-logo img { height: 38px; filter: brightness(0) invert(1); }
+  .nav-links { display: flex; gap: 28px; flex: 1; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--sage-light); }
+  .lang-toggle { border: 1px solid rgba(255,255,255,0.3); padding: 4px 10px; border-radius: 20px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+  .mobile-menu { display: none; flex-direction: column; background: var(--forest); padding: 16px 24px 24px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 15px; }
+  .mobile-menu .btn { margin-top: 16px; text-align: center; }
+  @media (max-width: 860px) { .nav-links, .nav-cta { display: none; } .hamburger { display: flex; } }
+
+  /* HERO */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,22,8,0.75) 0%, rgba(10,22,8,0.45) 55%, rgba(10,22,8,0.68) 100%); }
+  .hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 120px 24px 80px; max-width: 800px; }
+  .hero-eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 20px; font-weight: 500; display: block; }
+  .hero-title { font-size: clamp(44px, 7vw, 82px); font-weight: 800; line-height: 1.08; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.3); }
+  .hero-sub { font-size: clamp(15px, 2vw, 18px); line-height: 1.65; color: rgba(255,255,255,0.85); margin-bottom: 40px; }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .scroll-hint { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.45); z-index: 2; animation: bounce 2s infinite; text-decoration: none; }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+  /* STRIP */
+  .strip { background: var(--forest); }
+  .strip-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(4,1fr); }
+  .strip-item { padding: 28px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .strip-item:last-child { border-right: none; }
+  .strip-num { display: block; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--sage-light); }
+  .strip-label { display: block; font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.5px; }
+  @media (max-width: 640px) { .strip-inner { grid-template-columns: 1fr 1fr; } .strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); } .strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); } }
+
+  /* STORY */
+  .story { background: var(--warm-white); }
+  .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .story-body { font-size: 15px; line-height: 1.75; color: #445540; margin-bottom: 16px; }
+  .story-body:last-of-type { margin-bottom: 32px; }
+  .story-image { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; background: var(--sage); }
+  .story-image img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 800px) { .story-inner { grid-template-columns: 1fr; gap: 40px; } .story-image { aspect-ratio: 16/9; } }
+
+  /* CABINS */
+  .cabins { background: var(--mist); }
+  .cabins-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+  .cabin-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 20px rgba(30,61,26,0.07); transition: transform 0.3s, box-shadow 0.3s; }
+  .cabin-card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(30,61,26,0.13); }
+  .cabin-img { position: relative; height: 220px; overflow: hidden; background: var(--sage); }
+  .cabin-card--featured .cabin-img { height: 280px; }
+  .cabin-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+  .cabin-card:hover .cabin-img img { transform: scale(1.05); }
+  .cabin-badge { position: absolute; top: 14px; left: 14px; background: var(--amber); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; }
+  .cabin-content { padding: 22px 24px 26px; }
+  .cabin-content h3 { font-size: 20px; color: var(--forest); margin-bottom: 8px; }
+  .cabin-content p { font-size: 14px; color: #556650; line-height: 1.6; margin-bottom: 14px; }
+  .cabin-meta { display: flex; gap: 16px; font-size: 13px; color: var(--sage); margin-bottom: 18px; }
+  .cabins-cta { text-align: center; }
+  @media (max-width: 900px) { .cabins-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .cabins-grid { grid-template-columns: 1fr; } }
+
+  /* ADVENTURES */
+  .adventures { background: var(--forest); }
+  .adventures .section-label { color: var(--sage-light); }
+  .adventures .section-title { color: #fff; }
+  .adventures .section-sub { color: rgba(255,255,255,0.65); }
+  .adventures-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 48px; }
+  .adventure-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 28px 24px; transition: background 0.2s; }
+  .adventure-card:hover { background: rgba(255,255,255,0.1); }
+  .adventure-icon { font-size: 32px; display: block; margin-bottom: 14px; }
+  .adventure-card h3 { font-size: 18px; color: #fff; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+  .adventure-card p { font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.65; }
+  .adventures-cta { text-align: center; }
+  @media (max-width: 860px) { .adventures-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .adventures-grid { grid-template-columns: 1fr; } }
+
+  /* GALLERY */
+  .gallery { width: 100%; }
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1.6fr; grid-template-rows: 280px 280px; gap: 4px; }
+  .gitem { overflow: hidden; background: var(--sage); }
+  .gitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .gitem:hover img { transform: scale(1.05); }
+  .gitem--tall { grid-row: span 2; }
+  .gitem--wide { grid-column: span 2; }
+  @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4,220px); } .gitem--tall { grid-row: span 1; } .gitem--wide { grid-column: span 1; } }
+
+  /* LOCATION */
+  .location { background: var(--warm-white); }
+  .location-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
+  .location-addr { font-size: 14px; color: #556650; line-height: 1.7; margin: 20px 0 24px; }
+  .location-contacts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .contact-item { font-size: 14px; color: var(--forest-mid); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .contact-item:hover { color: var(--sage); }
+  @media (max-width: 860px) { .location-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* FOOTER */
+  .footer { background: var(--dark); color: rgba(255,255,255,0.65); }
+  .footer-inner { max-width: 1140px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+  .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.45); }
+  .footer-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 16px; font-weight: 600; font-family: 'Inter', sans-serif; }
+  .footer-col { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { max-width: 1140px; margin: 0 auto; padding: 20px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.3); }
+  @media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .footer-inner { grid-template-columns: 1fr; } }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 2px; }
+</style>
